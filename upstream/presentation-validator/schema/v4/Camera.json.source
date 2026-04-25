@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/Camera.json
+sha256: b3feb6e9456e840a959ac113bd35dd3cb8ce9e45e822067b35ed9ed2c7b915bb

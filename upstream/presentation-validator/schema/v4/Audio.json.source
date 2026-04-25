@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/Audio.json
+sha256: a036a25c640bf8cec922f218fd24deb5c90df817f75c81c96b940422e90fd08f

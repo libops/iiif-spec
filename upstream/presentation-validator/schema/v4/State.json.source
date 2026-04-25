@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/State.json
+sha256: 21777a24bb5363ed2c142a8831443fe9e4e7849e1556f69039a61d8ff0f9d464

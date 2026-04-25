@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/PointSelector.json
+sha256: da1e3b371169f28ca7e7f6804d3d30bf3b2a495ae6f5a634e8c6875cd2715a6c

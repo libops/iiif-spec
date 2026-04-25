@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/SVGSelector.json
+sha256: 22d4382a42c2c4042ee0526573bc600dd5ff189e1273eedc1b7c97d02e948eb9

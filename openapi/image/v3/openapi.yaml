@@ -1,0 +1,133 @@
+openapi: 3.1.1
+info:
+  title: iiif-spec IIIF Image API
+  version: 0.1.0
+  description: >
+    LibOps-maintained OpenAPI description for the IIIF Image API surface.
+    This is a derived machine-readable contract for client generation and
+    validation. The canonical normative source remains the IIIF Image API 3.0
+    prose specification.
+servers:
+  - url: https://example.org
+paths:
+  /iiif/3/{identifier}/info.json:
+    get:
+      operationId: getImageInfo
+      summary: Fetch IIIF image information
+      parameters:
+        - $ref: '#/components/parameters/Identifier'
+      responses:
+        '200':
+          description: Image information document
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+            Link:
+              schema:
+                type: string
+          content:
+            application/ld+json:
+              schema:
+                $ref: ../../../derived/image/v3/schema/info.schema.json
+            application/json:
+              schema:
+                $ref: ../../../derived/image/v3/schema/info.schema.json
+        '404':
+          description: Image not found
+  /iiif/3/{identifier}/{region}/{size}/{rotation}/{quality}.{format}:
+    get:
+      operationId: getImageDerivative
+      summary: Fetch a transformed IIIF image derivative
+      parameters:
+        - $ref: '#/components/parameters/Identifier'
+        - $ref: '#/components/parameters/Region'
+        - $ref: '#/components/parameters/Size'
+        - $ref: '#/components/parameters/Rotation'
+        - $ref: '#/components/parameters/Quality'
+        - $ref: '#/components/parameters/Format'
+        - name: If-None-Match
+          in: header
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Transformed image derivative
+          headers:
+            Content-Type:
+              schema:
+                type: string
+            ETag:
+              schema:
+                type: string
+            Link:
+              schema:
+                type: string
+            X-Cache:
+              schema:
+                type: string
+          content:
+            image/jpeg: {}
+            image/png: {}
+            image/gif: {}
+            image/webp: {}
+            image/tiff: {}
+        '304':
+          description: Not modified
+          headers:
+            ETag:
+              schema:
+                type: string
+        '400':
+          description: Invalid IIIF request syntax
+        '404':
+          description: Image not found
+components:
+  parameters:
+    Identifier:
+      name: identifier
+      in: path
+      required: true
+      description: >
+        IIIF identifier. Implementation-specific transport and routing details
+        are intentionally left to downstream servers.
+      schema:
+        type: string
+    Region:
+      name: region
+      in: path
+      required: true
+      schema:
+        type: string
+      description: >
+        IIIF region parameter. Parsed by the IIIF Image API grammar rather than
+        JSON Schema.
+    Size:
+      name: size
+      in: path
+      required: true
+      schema:
+        type: string
+      description: IIIF size parameter.
+    Rotation:
+      name: rotation
+      in: path
+      required: true
+      schema:
+        type: string
+      description: IIIF rotation parameter.
+    Quality:
+      name: quality
+      in: path
+      required: true
+      schema:
+        type: string
+        enum: [default, color, gray, bitonal]
+    Format:
+      name: format
+      in: path
+      required: true
+      schema:
+        type: string
+        enum: [jpg, png, gif, webp, tif]

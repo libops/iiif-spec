@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/AmbientLight.json
+sha256: 9e7b6d4210bbd6d57ba4cf5a1013dd3174a89c52df2226ee481b5e2c6a0d0857

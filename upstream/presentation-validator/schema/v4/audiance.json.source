@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/audiance.json
+sha256: ad77de439ca8d8a7dedf63f7424ad2c9d33940fd1da31d56ab2d6f1579b8ba8d

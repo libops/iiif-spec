@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/PlaceholderCanvas.json
+sha256: fd601874dd682e95fcef7ace833a7a038ee9149ded6295b9a60f14a59a4c47f8

@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/WktSelector.json
+sha256: a37b7fc6e56660b6b066ef01d712bea3c561a6ee1f6cf86a10749af3ed5edaba

@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/RangeSelector.json
+sha256: 6da442d5b8bd29668411bd8f7aa089436a10468902b32466241dbe56fe62c93a

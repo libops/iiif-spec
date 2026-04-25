@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/FragmentSelector.json
+sha256: daf500c5b2ad588d42a2d60abf59f9046fdd61495d59f6138260d05a55b728a4

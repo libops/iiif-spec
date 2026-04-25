@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/ImageAPISelector.json
+sha256: 41a595ec1b9239ba3671cdc2efeefe0fa9facfd6af1c57e6ba6fd0120fc60933

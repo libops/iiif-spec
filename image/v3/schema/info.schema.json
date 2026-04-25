@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/libops/iiif-spec/derived/image/v3/schema/info.schema.json",
+  "title": "IiifSpecDerivedImageInfo",
+  "description": "LibOps-maintained derived JSON Schema for IIIF Image API 3.0 info.json responses. Derived from the IIIF Image 3.0 prose spec and validated against upstream image-validator examples.",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "@context": {
+      "oneOf": [
+        {
+          "type": "string",
+          "const": "http://iiif.io/api/image/3/context.json"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "contains": {
+            "const": "http://iiif.io/api/image/3/context.json"
+          },
+          "minContains": 1
+        }
+      ]
+    },
+    "id": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "type": {
+      "type": "string",
+      "const": "ImageService3"
+    },
+    "protocol": {
+      "type": "string",
+      "const": "http://iiif.io/api/image"
+    },
+    "profile": {
+      "type": "string",
+      "enum": ["level0", "level1", "level2"]
+    },
+    "width": {
+      "$ref": "#/$defs/positiveInteger"
+    },
+    "height": {
+      "$ref": "#/$defs/positiveInteger"
+    },
+    "maxWidth": {
+      "$ref": "#/$defs/positiveInteger"
+    },
+    "maxHeight": {
+      "$ref": "#/$defs/positiveInteger"
+    },
+    "maxArea": {
+      "$ref": "#/$defs/positiveInteger"
+    },
+    "sizes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/size"
+      }
+    },
+    "tiles": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tile"
+      }
+    },
+    "preferredFormats": {
+      "$ref": "#/$defs/stringList"
+    },
+    "rights": {
+      "type": "string",
+      "format": "uri"
+    },
+    "partOf": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference"
+      }
+    },
+    "seeAlso": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/externalResource"
+      }
+    },
+    "service": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/service"
+      }
+    },
+    "extraQualities": {
+      "$ref": "#/$defs/stringList"
+    },
+    "extraFormats": {
+      "$ref": "#/$defs/stringList"
+    },
+    "extraFeatures": {
+      "$ref": "#/$defs/stringList"
+    }
+  },
+  "required": [
+    "@context",
+    "id",
+    "type",
+    "protocol",
+    "profile",
+    "width",
+    "height"
+  ],
+  "dependentRequired": {
+    "maxHeight": ["maxWidth"]
+  },
+  "$defs": {
+    "positiveInteger": {
+      "type": "integer",
+      "exclusiveMinimum": 0
+    },
+    "stringList": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "languageMap": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-Za-z0-9-]+$": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "^none$": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "size": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "$ref": "#/$defs/positiveInteger"
+        },
+        "height": {
+          "$ref": "#/$defs/positiveInteger"
+        }
+      },
+      "required": ["width", "height"],
+      "additionalProperties": false
+    },
+    "tile": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "$ref": "#/$defs/positiveInteger"
+        },
+        "height": {
+          "$ref": "#/$defs/positiveInteger"
+        },
+        "scaleFactors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/positiveInteger"
+          },
+          "minItems": 1
+        }
+      },
+      "required": ["width", "scaleFactors"],
+      "additionalProperties": false
+    },
+    "reference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "type": {
+          "type": "string"
+        },
+        "label": {
+          "$ref": "#/$defs/languageMap"
+        }
+      },
+      "required": ["id", "type"],
+      "additionalProperties": true
+    },
+    "externalResource": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/reference"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "format": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9.+-]*/.+$"
+            },
+            "profile": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        }
+      ]
+    },
+    "service": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "@id": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "type": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string"
+        },
+        "label": {
+          "$ref": "#/$defs/languageMap"
+        }
+      },
+      "anyOf": [
+        {
+          "required": ["id", "type"]
+        },
+        {
+          "required": ["@id"]
+        }
+      ],
+      "additionalProperties": true
+    }
+  }
+}

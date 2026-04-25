@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/OrthographicCamera.json
+sha256: a31337fa34fcd08bf1a4ed8768d65b559bb0fe8bbdf3804dd8ee75448400ec46

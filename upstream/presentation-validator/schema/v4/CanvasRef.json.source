@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/CanvasRef.json
+sha256: af057eaac49c08ac63553645f734be38dddc8d2c888c33c1fc00310670f307da

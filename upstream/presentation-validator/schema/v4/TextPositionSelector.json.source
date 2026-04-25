@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/TextPositionSelector.json
+sha256: 529f1b0966e5a1a53aeb1d6c4c17620283bd0c5efe777e595af0bd23c3cf1fe8

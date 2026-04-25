@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/ManifestRef.json
+sha256: 228972ae63cff99a1621ec18317cebf0b07a6451c338270d052db562f10c9259

@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/LookAt.json
+sha256: 2fe8bc2fadcdfbfc2e88099bffc70e5afaf2ce4697701c2bea94b2795970170c

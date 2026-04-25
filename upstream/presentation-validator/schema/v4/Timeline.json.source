@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/Timeline.json
+sha256: 280699ac62932990a66b622f8ebd8f9459e9320440dcad8472bd7f3e7c7c51b8

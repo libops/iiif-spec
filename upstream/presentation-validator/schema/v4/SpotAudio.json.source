@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/SpotAudio.json
+sha256: 6c5a4f9a15ea780cf491ccf05ab61d432b32bc9ae24cf6fddf334a773a6cfe34

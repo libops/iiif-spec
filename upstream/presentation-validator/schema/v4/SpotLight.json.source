@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/SpotLight.json
+sha256: c967013fb7c903830df6f4b5de9637b1e05aab6bd62920ec5ee81a902a4c1df3

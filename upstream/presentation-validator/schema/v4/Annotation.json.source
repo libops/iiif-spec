@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/Annotation.json
+sha256: 301efb597f18752d4d8748d497a28b0ae19a168d2cd958c7595f23ed3925cf35

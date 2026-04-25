@@ -1,0 +1,4 @@
+source: https://github.com/IIIF/presentation-validator
+sha: 5fccfbc01ac6627ecdb81f845a595b5ea295f86d
+path: schema/v4/LightTypes.json
+sha256: 3c8ff09c6b043ff422d60123002a94d1128de86173d18a819e81d9674ad2b173
