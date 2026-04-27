@@ -1,4 +1,4 @@
-.PHONY: generate generate-upstream generate-go-types fmt
+.PHONY: generate generate-upstream generate-go-types fmt lint test test-artifacts test-race
 
 generate: generate-upstream generate-go-types fmt
 
@@ -10,3 +10,14 @@ generate-go-types:
 
 fmt:
 	gofmt -w .
+
+lint:
+	go vet ./...
+
+test: test-artifacts
+
+test-artifacts:
+	go test ./...
+
+test-race:
+	go test -race ./...

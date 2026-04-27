@@ -8,9 +8,15 @@ info:
     validation. The canonical normative source remains the IIIF Image API 3.0
     prose specification.
 servers:
-  - url: https://example.org
+  - url: https://example.org/{iiifImageBasePath}
+    variables:
+      iiifImageBasePath:
+        default: iiif/3
+        description: >
+          Deployment-specific Image API base path. `/iiif/3` is a common
+          convention, but it is not part of the normative Image API contract.
 paths:
-  /iiif/3/{identifier}/info.json:
+  /{identifier}/info.json:
     get:
       operationId: getImageInfo
       summary: Fetch IIIF image information
@@ -35,7 +41,7 @@ paths:
                 $ref: ../../../derived/image/v3/schema/info.schema.json
         '404':
           description: Image not found
-  /iiif/3/{identifier}/{region}/{size}/{rotation}/{quality}.{format}:
+  /{identifier}/{region}/{size}/{rotation}/{quality}.{format}:
     get:
       operationId: getImageDerivative
       summary: Fetch a transformed IIIF image derivative

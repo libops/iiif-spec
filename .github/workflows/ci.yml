@@ -1,0 +1,41 @@
+name: build-push
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Set up Go
+        uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6
+        with:
+          go-version: ">=1.26.2"
+
+      - name: Cache Go tools
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+            ~/go/bin
+          key: ${{ runner.os }}-golang-${{ hashFiles('go.sum', 'Makefile', 'scripts/generate-go-types.sh') }}
+          restore-keys: |
+            ${{ runner.os }}-golang-
+
+      - name: lint
+        run: make lint
+
+      - name: test
+        run: make test-artifacts
+
+      - name: race
+        run: make test-race
+
+      - name: Check generated artifacts are current
+        run: |
+          make generate
+          git diff --exit-code

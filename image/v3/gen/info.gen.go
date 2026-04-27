@@ -4,9 +4,9 @@ package gen
 
 type ExternalResource interface{}
 
-// LibOps-maintained derived JSON Schema for IIIF Image API 3.0 info.json responses.
-// Derived from the IIIF Image 3.0 prose spec and validated against upstream
-// image-validator examples.
+// LibOps-maintained derived JSON Schema for IIIF Image API 3.0 info.json
+// responses. Derived from the IIIF Image 3.0 prose spec and validated against
+// upstream image-validator examples.
 type InfoSchemaJson struct {
 	// Context corresponds to the JSON schema field "@context".
 	Context interface{} `json:"@context"`
