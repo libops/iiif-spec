@@ -63,6 +63,8 @@ This repo is strict about provenance:
   - derived JSON Schema for IIIF Image 3.0 `info.json`
 - `openapi/image/v3/openapi.yaml`
   - initial OpenAPI description for implemented Image API routes
+- `derived/extensions/text-granularity/schema/annotation.schema.json`
+  - derived schema for the Text Granularity `textGranularity` property
 - `upstream/iiif-api/source/...`
   - vendored JSON-LD contexts and related machine-readable artifacts from the
     canonical `IIIF/api` repository
@@ -103,5 +105,12 @@ packages such as:
 - `github.com/libops/iiif-spec/image/v3/gen`
 - `github.com/libops/iiif-spec/image/v3/schema`
 - `github.com/libops/iiif-spec/presentation/v3/gen/...`
+- `github.com/libops/iiif-spec/presentation/v3/schema`
+- `github.com/libops/iiif-spec/extension/textgranularity/schema`
+
+The Presentation schema package exposes strict validators for canonical core
+resources and `ValidateExtensible*` variants for resources that use registered
+or local extensions. The Text Granularity package composes the extension-aware
+Presentation validators with the extension property and context requirements.
 
 Triplet is the first downstream consumer target for this repository.

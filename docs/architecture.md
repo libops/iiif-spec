@@ -110,7 +110,7 @@ model should remain:
 | `presentation/v3/gen/` | Public Go wire-type packages generated from vendored Presentation schema files. | Split per-resource because the upstream aggregate schema is not generator-friendly. |
 | `derived/image/v3/schema/info.schema.json` | Derived JSON Schema for Image API 3.0 `info.json`. | Derived from IIIF Image 3 prose, `IIIF/api` context/profile JSON, and `image-validator` examples. |
 | `openapi/image/v3/openapi.yaml` | Initial OpenAPI description for IIIF Image API 3.0. | Early derived contract; currently shaped by triplet’s implemented surface. |
-| `derived/extensions/text-granularity/README.md` | Placeholder for extension-specific machine-readable artifacts. | First tracked extension area. |
+| `derived/extensions/text-granularity/` | Derived Text Granularity schema and provenance. | Published with a composed Go validator. |
 | `examples/go/README.md` | Documents the intended downstream consumption pattern. | |
 
 ### In progress / not done
@@ -157,8 +157,8 @@ model should remain:
 
 #### Extensions
 
-- convert `derived/extensions/text-granularity/` from placeholder to actual
-  schema/OpenAPI-supporting artifacts
+- extend `derived/extensions/text-granularity/` beyond its Annotation property
+  schema when additional normative machine-readable constraints emerge
 - add extension directories as needed for:
   - navPlace
   - georef
