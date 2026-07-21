@@ -133,6 +133,26 @@ func TestNamedTopLevelValidators(t *testing.T) {
 	if err := schema.ValidateAnnotationCollectionBytes(annotationCollection); err != nil {
 		t.Fatalf("valid standalone AnnotationCollection rejected: %v", err)
 	}
+
+	rangeDoc := []byte(`{
+		"@context":"http://iiif.io/api/presentation/3/context.json",
+		"id":"https://example.org/ranges/1",
+		"type":"Range",
+		"label":{"en":["Chapter one"]},
+		"items":[{
+			"id":"https://example.org/canvases/1",
+			"type":"Canvas",
+			"height":1000,
+			"width":800,
+			"items":[]
+		}]
+	}`)
+	if err := schema.ValidateRangeBytes(rangeDoc); err != nil {
+		t.Fatalf("valid standalone Range rejected: %v", err)
+	}
+	if err := schema.ValidateExtensibleRangeBytes(rangeDoc); err != nil {
+		t.Fatalf("extension-aware standalone Range rejected: %v", err)
+	}
 }
 
 func TestValidateExtensibleResources(t *testing.T) {
@@ -269,6 +289,8 @@ func validateByDocumentType(doc []byte) error {
 		return schema.ValidateManifestBytes(doc)
 	case "Canvas":
 		return schema.ValidateCanvasBytes(doc)
+	case "Range":
+		return schema.ValidateRangeBytes(doc)
 	case "AnnotationCollection":
 		return schema.ValidateAnnotationCollectionBytes(doc)
 	case "AnnotationPage":

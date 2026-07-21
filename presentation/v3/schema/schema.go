@@ -35,6 +35,7 @@ var schemaFragments = map[string]string{
 	"Collection":           "#/classes/collection",
 	"Manifest":             "#/classes/manifest",
 	"Canvas":               "#/classes/canvas",
+	"Range":                "#/classes/range",
 	"AnnotationCollection": "#/classes/annotationCollection",
 	"AnnotationPage":       "#/classes/annotationPage",
 	"Annotation":           "#/classes/annotation",
@@ -76,6 +77,12 @@ func ValidateManifestBytes(doc []byte) error {
 // vendored upstream validator schema.
 func ValidateCanvasBytes(doc []byte) error {
 	return validateBytes("Canvas", "canvas", doc)
+}
+
+// ValidateRangeBytes validates a Presentation API Range document against the
+// vendored upstream validator schema.
+func ValidateRangeBytes(doc []byte) error {
+	return validateBytes("Range", "range", doc)
 }
 
 // ValidateAnnotationCollectionBytes validates a Presentation API
@@ -121,6 +128,11 @@ func ValidateExtensibleManifestBytes(doc []byte) error {
 // Canvas.
 func ValidateExtensibleCanvasBytes(doc []byte) error {
 	return validateExtensibleBytes("Canvas", "canvas", doc)
+}
+
+// ValidateExtensibleRangeBytes validates an extension-aware standalone Range.
+func ValidateExtensibleRangeBytes(doc []byte) error {
+	return validateExtensibleBytes("Range", "range", doc)
 }
 
 // ValidateExtensibleAnnotationCollectionBytes validates an extension-aware
