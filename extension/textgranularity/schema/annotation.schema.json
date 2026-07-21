@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.libops.io/iiif/extension/text-granularity/annotation.schema.json",
+  "title": "IIIF Text Granularity Annotation Extension",
+  "description": "Derived from the IIIF Text Granularity Extension prose and context. It validates the extension property only; the containing Annotation remains subject to the IIIF Presentation API and Web Annotation contracts.",
+  "$comment": "The specification requires a single string. The six values in the IIIF context are recommendations rather than an exhaustive MUST-level enum because registered extensions may define additional values.",
+  "type": "object",
+  "properties": {
+    "textGranularity": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "textGranularity"
+  ]
+}
